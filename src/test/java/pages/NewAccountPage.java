@@ -15,7 +15,7 @@ public class NewAccountPage extends BasePage {
             super(driver);
         }
 
-        public static final String SAVE_BUTTON_XPATH = "//button[@title = 'Сохранить']";
+        public static final String SAVE_BUTTON_XPATH = "//button[@title = 'Save']";
 
         public NewAccountPage openPage() {
             driver.get("https://tms5.lightning.force.com/lightning/o/Account/new");
