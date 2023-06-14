@@ -3,10 +3,7 @@ package tests;
 import driver.DriverSingleton;
 import model.User;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.*;
 import steps.LoginSteps;
 import utilities.TestListener;
 
@@ -17,7 +14,7 @@ public class BaseTest {
 
     User user = new User("ckotd-9hz7@force.com", "TMSAQA20onl", "https://eu44.lightning.force.com");
 
-    @BeforeClass
+    @BeforeTest
     public void startBrowser() {
         driver = DriverSingleton.getInstance().getDriver();
     }
@@ -28,7 +25,7 @@ public class BaseTest {
         loginSteps.login(user);
     }
 
-    @AfterClass(alwaysRun = true)
+    @AfterTest(alwaysRun = true)
     public void stopBrowser() {
         DriverSingleton.getInstance().closeDriver();
     }

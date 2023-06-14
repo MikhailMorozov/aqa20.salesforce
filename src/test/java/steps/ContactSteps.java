@@ -9,9 +9,15 @@ public class ContactSteps {
     @Step("create new contact")
     public ContactSteps createNewContact(Contact contact) {
         NewContactPage newContactPage = new NewContactPage();
-        newContactPage.openPage()
+        newContactPage.openPageNewContact()
                 .create(contact)
                 .clickSave();
         return this;
+    }
+
+    @Step("Contact is displayed")
+    public boolean contactIsDisplayed(Contact contact) {
+        NewContactPage newContactPage = new NewContactPage();
+        return newContactPage.isFullNameContactDisplayed(contact);
     }
 }

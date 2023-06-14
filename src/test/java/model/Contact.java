@@ -11,7 +11,7 @@ public class Contact {
         this.salutation = salutation;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.lastName = accountName;
+        this.accountName = accountName;
     }
 
     public String getSalutation() {

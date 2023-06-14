@@ -16,8 +16,8 @@ public class InputField {
         this.label = label;
     }
 
-    private static final String INPUT_XPATH = "//*[contains(text(),'%s')]/ancestor::div[contains(@class,'uiInput')]//input";
-    private static final String INPUT_CONTACT_XPATH = "//input[@placeholder='%s']";
+    public static final String INPUT_XPATH = "//*[contains(text(),'%s')]/ancestor::div[contains(@class,'uiInput')]//input";
+    public static final String INPUT_CONTACT_XPATH = "//input[@placeholder='%s']";
 
 
     public void writeTextAccount(String text) {
