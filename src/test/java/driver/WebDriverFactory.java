@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class WebDriverFactory {
 
-private static final int IMPLICITLY_WAIT_TIMEOUT_SECOND = 30;
+    private static final int IMPLICITLY_WAIT_TIMEOUT_SECOND = 3;
 
     private WebDriverFactory() {
     }

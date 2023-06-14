@@ -18,7 +18,7 @@
         <javafaker.version>1.0.2</javafaker.version>
         <allure.version>2.21.0</allure.version>
         <aspectj.version>1.9.8</aspectj.version>
-        <suiteXmlFile>src/test/resources/customtestsuite.xml</suiteXmlFile>
+        <suiteXmlFile>src/test/resources/suit.xml</suiteXmlFile>
     </properties>
 
     <dependencies>

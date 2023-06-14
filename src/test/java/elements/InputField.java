@@ -9,15 +9,24 @@ public class InputField {
     WebDriver driver;
     String label;
 
+    private static final int EXPLICITLY_WAIT_TIMEOUT_SECOND = 30;
+
     public InputField(WebDriver driver, String label) {
         this.driver = driver;
         this.label = label;
     }
 
     private static final String INPUT_XPATH = "//*[contains(text(),'%s')]/ancestor::div[contains(@class,'uiInput')]//input";
+    private static final String INPUT_CONTACT_XPATH = "//input[@placeholder='%s']";
 
-    public void writeText(String text) {
-        new WebDriverWait(driver, 15).until(ExpectedConditions
+
+    public void writeTextAccount(String text) {
+        new WebDriverWait(driver, EXPLICITLY_WAIT_TIMEOUT_SECOND).until(ExpectedConditions
                 .visibilityOf(driver.findElement(By.xpath(String.format(INPUT_XPATH, label))))).sendKeys(text);
+    }
+
+    public void writeTextContact(String text) {
+        new WebDriverWait(driver, EXPLICITLY_WAIT_TIMEOUT_SECOND).until(ExpectedConditions
+                .visibilityOf(driver.findElement(By.xpath(String.format(INPUT_CONTACT_XPATH, label))))).sendKeys(text);
     }
 }

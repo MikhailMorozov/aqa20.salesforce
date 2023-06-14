@@ -1,17 +1,16 @@
 package tests;
 
-import model.User;
+import model.Account;
 import org.testng.annotations.Test;
-import steps.LoginSteps;
+import steps.AccountSteps;
+
 
 public class AccountTest extends BaseTest{
-
-    User user = new User("ckotd-9hz7@force.com", "TMSAQA20onl", "https://eu44.lightning.force.com");
+    Account account = new Account("AQA Account 1", "www.onliner.by", "Apparel");
     @Test
-    public void createAccount() {
-        LoginSteps loginSteps = new LoginSteps();
-        loginSteps.login(user);
-
+    public void createAccountTest() {
+        AccountSteps accountSteps = new AccountSteps();
+        accountSteps.createNewAccount(account);
     }
 
 

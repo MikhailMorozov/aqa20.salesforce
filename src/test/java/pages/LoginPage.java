@@ -10,10 +10,6 @@ public class LoginPage extends BasePage{
     private final By PASSWORD_INPUT = By.xpath("//input[@id='password']");
     private final By LOGIN_BUTTON = By.xpath("//input[@id='Login']");
 
-//    public LoginPage(WebDriver driver) {
-//        super(driver);
-//    }
-
     public LoginPage openPage () {
         driver.get(PageUrls.LOGIN_PAGE);
         return this;

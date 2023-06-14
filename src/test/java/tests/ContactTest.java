@@ -1,13 +1,17 @@
 package tests;
 
-import model.User;
-import org.testng.annotations.Test;
 
-public class ContactTest {
+import model.Contact;
+import org.testng.annotations.Test;
+import steps.ContactSteps;
+
+public class ContactTest extends BaseTest{
+
+    Contact contact = new Contact("Dr.","Mike", "Smith", "AQA Account 1");
 
     @Test
     public void createContactTest(){
-        User user = new User("ckotd-9hz7@force.com", "TMSAQA20onl", "https://eu44.lightning.force.com");
-
+        ContactSteps contactSteps = new ContactSteps();
+        contactSteps.createNewContact(contact);
     }
 }

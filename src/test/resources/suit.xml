@@ -2,8 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="UI test" >
 
-    <test name="sauced test" parallel="tests" thread-count="1">
+    <test name="SalesForce test" parallel="tests" thread-count="1">
         <classes>
+            <class name="tests.AccountTest"/>
             <class name="tests.ContactTest"/>
         </classes>
     </test>

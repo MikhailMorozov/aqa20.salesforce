@@ -6,30 +6,28 @@ package pages;
     import model.Account;
     import org.openqa.selenium.By;
     import org.openqa.selenium.WebDriver;
+    import utilities.PageUrls;
 
-    import static utilities.StringConstant.accountLabel;
+    import static utilities.StringConstant.*;
 
 public class NewAccountPage extends BasePage {
-
-        public NewAccountPage(WebDriver driver) {
-            super(driver);
-        }
 
         public static final String SAVE_BUTTON_XPATH = "//button[@title = 'Save']";
 
         public NewAccountPage openPage() {
-            driver.get("https://tms5.lightning.force.com/lightning/o/Account/new");
+            driver.get(PageUrls.ACCOUNT_PAGE);
             return this;
         }
 
-        public void create(Account account) {
-            new InputField(driver, accountLabel).writeText(account.getAccountName());
-            new InputField(driver, "Веб-узел").writeText(account.getWebSite());
-            new DropDown(driver, "Отрасль").selectOption(account.getIndustry());
-            clickSave();
+        public NewAccountPage create(Account account) {
+            new InputField(driver, accountLabel).writeTextAccount(account.getAccountName());
+            new InputField(driver, accountWebsite).writeTextAccount(account.getWebSite());
+            new DropDown(driver, accountIndustry).selectOptionAccount(account.getIndustry());
+            return this;
         }
 
-        public void clickSave() {
+        public NewAccountPage clickSave() {
             driver.findElement(By.xpath(SAVE_BUTTON_XPATH)).click();
+            return this;
         }
     }
