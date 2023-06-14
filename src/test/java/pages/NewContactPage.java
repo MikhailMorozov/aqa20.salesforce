@@ -1,6 +1,7 @@
 package pages;
 
 import model.Contact;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class NewContactPage extends BasePage{
