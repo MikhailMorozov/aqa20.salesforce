@@ -10,5 +10,4 @@ public class Contact {
     private String salutation;
     private String firstName;
     private String lastName;
-    private String accountName;
 }

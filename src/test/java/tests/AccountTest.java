@@ -1,6 +1,7 @@
 package tests;
 
 import model.Account;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import steps.AccountSteps;
 
@@ -11,6 +12,7 @@ public class AccountTest extends BaseTest{
     public void createAccountTest() {
         AccountSteps accountSteps = new AccountSteps();
         accountSteps.createNewAccount(account);
+        Assert.assertTrue(accountSteps.accountNameIsDisplayed(account), "New account don't create");
     }
 
 

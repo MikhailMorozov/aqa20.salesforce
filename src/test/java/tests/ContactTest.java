@@ -9,7 +9,7 @@ import steps.ContactSteps;
 
 public class ContactTest extends BaseTest{
 
-    Contact contact = new Contact("Dr.","Mike", "Smith", "AQA Account 1");
+    Contact contact = new Contact("Dr.","Mike", "Smith");
 
     @Test
     public void createContactTest(){

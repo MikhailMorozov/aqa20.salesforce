@@ -12,7 +12,8 @@ import utilities.TestListener;
 public class BaseTest {
     protected WebDriver driver;
 
-    User user = new User("ckotd-9hz7@force.com", "TMSAQA20onl", "https://eu44.lightning.force.com");
+//    User user = new User("ckotd-9hz7@force.com", "TMSAQA20onl", "https://eu44.lightning.force.com");
+    User user = new User("oybotk-zk2a@force.com", "TMSAQA20onl", "https://power-platform-6242.my.salesforce.com/");
 
     @BeforeTest
     public void startBrowser() {

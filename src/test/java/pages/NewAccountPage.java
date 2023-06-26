@@ -4,6 +4,7 @@ package pages;
     import elements.DropDown;
     import elements.InputField;
     import model.Account;
+    import model.Contact;
     import org.openqa.selenium.By;
     import org.openqa.selenium.WebDriver;
     import utilities.PageUrls;
@@ -12,7 +13,8 @@ package pages;
 
 public class NewAccountPage extends BasePage {
 
-        public static final String SAVE_BUTTON_XPATH = "//button[@title = 'Save']";
+        public static final String SAVE_BUTTON_XPATH = "//button[@name = 'SaveEdit']";
+        public static final String ACCOUNT_NAME_XPATH = "//a[contains(text(),'%s')]']";
 
         public NewAccountPage openPage() {
             driver.get(PageUrls.ACCOUNT_PAGE);
@@ -30,4 +32,8 @@ public class NewAccountPage extends BasePage {
             driver.findElement(By.xpath(SAVE_BUTTON_XPATH)).click();
             return this;
         }
+        public boolean isAccountNameDisplayed (Account account) {
+            return driver.findElement(By.xpath(String.format(ACCOUNT_NAME_XPATH, account.getAccountName()))).isDisplayed();
+        }
+
     }

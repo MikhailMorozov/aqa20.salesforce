@@ -3,6 +3,7 @@ package driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
@@ -24,8 +25,10 @@ public class WebDriverFactory {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         } else {
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--disable-popup-blocking", "--disable-notifications");
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(options);
         }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(IMPLICITLY_WAIT_TIMEOUT_SECOND, TimeUnit.SECONDS);
