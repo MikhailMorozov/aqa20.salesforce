@@ -25,8 +25,8 @@ public class NewContactPage extends BasePage{
         new DropDown(driver, contactSalutation).selectOptionContact(contact.getSalutation());
         new InputField(driver, contactFirstName).writeTextContact(contact.getFirstName());
         new InputField(driver, contactLastName).writeTextContact(contact.getLastName());
-        new InputField(driver, contactAccountName).writeTextContact(contact.getAccountName());
-        driver.findElement(By.xpath("//*[@id='dropdown-element-2066']/ul/li[2]")).click();
+        new DropDown(driver, contactAccountName).selectOptionContact(contact.getAccountName());
+//        driver.findElement(By.xpath("//*[@id='dropdown-element-2066']/ul/li[2]")).click();
         return this;
     }
 
