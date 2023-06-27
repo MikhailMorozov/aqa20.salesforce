@@ -5,7 +5,9 @@ package pages;
     import elements.InputField;
     import model.Account;
     import model.Contact;
+    import org.openqa.selenium.Alert;
     import org.openqa.selenium.By;
+    import org.openqa.selenium.NoAlertPresentException;
     import org.openqa.selenium.WebDriver;
     import utilities.PageUrls;
 
@@ -14,10 +16,15 @@ package pages;
 public class NewAccountPage extends BasePage {
 
         public static final String SAVE_BUTTON_XPATH = "//button[@name = 'SaveEdit']";
-        public static final String ACCOUNT_NAME_XPATH = "//a[contains(text(),'%s')]']";
+        public static final String ACCOUNT_NAME_XPATH = "//a[contains(text(),'%s')]";
 
         public NewAccountPage openPage() {
             driver.get(PageUrls.ACCOUNT_PAGE);
+            return this;
+        }
+
+        public NewAccountPage openPageAccountList() {
+            driver.get(PageUrls.ACCOUNT_LIST_PAGE);
             return this;
         }
 
@@ -35,5 +42,4 @@ public class NewAccountPage extends BasePage {
         public boolean isAccountNameDisplayed (Account account) {
             return driver.findElement(By.xpath(String.format(ACCOUNT_NAME_XPATH, account.getAccountName()))).isDisplayed();
         }
-
     }

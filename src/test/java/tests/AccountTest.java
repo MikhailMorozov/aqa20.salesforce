@@ -14,6 +14,4 @@ public class AccountTest extends BaseTest{
         accountSteps.createNewAccount(account);
         Assert.assertTrue(accountSteps.accountNameIsDisplayed(account), "New account don't create");
     }
-
-
 }

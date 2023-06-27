@@ -2,7 +2,6 @@ package steps;
 
 import io.qameta.allure.Step;
 import model.Account;
-import model.Contact;
 import pages.NewAccountPage;
 
 public class AccountSteps {
@@ -13,7 +12,8 @@ public class AccountSteps {
     public AccountSteps createNewAccount(Account account) {
         newAccountPage.openPage()
                       .create(account)
-                      .clickSave();
+                      .clickSave()
+                      .openPageAccountList();
         return this;
     }
 

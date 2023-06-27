@@ -9,9 +9,11 @@ import org.openqa.selenium.opera.OperaDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.openqa.selenium.UnexpectedAlertBehaviour.ACCEPT;
+
 public class WebDriverFactory {
 
-    private static final int IMPLICITLY_WAIT_TIMEOUT_SECOND = 3;
+    private static final int IMPLICITLY_WAIT_TIMEOUT_SECOND = 5;
 
     private WebDriverFactory() {
     }
@@ -27,6 +29,7 @@ public class WebDriverFactory {
         } else {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-popup-blocking", "--disable-notifications");
+            options.setUnhandledPromptBehaviour(ACCEPT);
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
         }
