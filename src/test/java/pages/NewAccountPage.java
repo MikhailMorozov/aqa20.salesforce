@@ -1,16 +1,10 @@
 package pages;
 
-
     import elements.DropDown;
     import elements.InputField;
     import model.Account;
-    import model.Contact;
-    import org.openqa.selenium.Alert;
     import org.openqa.selenium.By;
-    import org.openqa.selenium.NoAlertPresentException;
-    import org.openqa.selenium.WebDriver;
     import utilities.PageUrls;
-
     import static utilities.StringConstant.*;
 
 public class NewAccountPage extends BasePage {
@@ -42,4 +36,4 @@ public class NewAccountPage extends BasePage {
         public boolean isAccountNameDisplayed (Account account) {
             return driver.findElement(By.xpath(String.format(ACCOUNT_NAME_XPATH, account.getAccountName()))).isDisplayed();
         }
-    }
+}

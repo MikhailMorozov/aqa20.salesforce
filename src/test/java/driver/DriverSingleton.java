@@ -6,7 +6,7 @@ public class DriverSingleton {
 
     private static ThreadLocal<DriverSingleton> instance = new ThreadLocal<>();
 
-    WebDriver driver;
+    private WebDriver driver;
 
     private DriverSingleton() {
         driver = WebDriverFactory.getWebDriver();
@@ -31,6 +31,4 @@ public class DriverSingleton {
             instance.remove();
         }
     }
-
-
 }

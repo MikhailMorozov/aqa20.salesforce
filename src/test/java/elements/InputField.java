@@ -8,12 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class InputField {
 
     private static final int EXPLICITLY_WAIT_TIMEOUT_SECOND = 30;
-
     public static final String INPUT_XPATH = "//*[@name='%s']";
     public static final String INPUT_CONTACT_XPATH = "//input[@placeholder='%s']";
-
-    WebDriver driver;
-    String label;
+    private WebDriver driver;
+    private String label;
 
     public InputField(WebDriver driver, String label) {
         this.driver = driver;

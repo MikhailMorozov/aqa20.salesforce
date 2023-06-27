@@ -18,7 +18,7 @@ public class WebDriverFactory {
     private WebDriverFactory() {
     }
     public static WebDriver getWebDriver() {
-        WebDriver driver = null;
+        WebDriver driver;
         String browser = System.getProperty("browser", "chrome");
         if (browser.equals("opera")) {
             WebDriverManager.operadriver().setup();
@@ -37,6 +37,4 @@ public class WebDriverFactory {
         driver.manage().timeouts().implicitlyWait(IMPLICITLY_WAIT_TIMEOUT_SECOND, TimeUnit.SECONDS);
         return driver;
     }
-
-
 }

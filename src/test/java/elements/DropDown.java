@@ -8,13 +8,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 @AllArgsConstructor
 public class DropDown {
-    WebDriver driver;
-    String label;
-
     private static final String DROP_DOWN_ACCOUNT_XPATH = "//*[contains(text(),'%s')]/following-sibling::div/descendant::button";
     private static final String DROP_DOWN_CONTACT_XPATH = "//*[contains(text(),'%s')]/following::button[1]";
     private static final String SELECT_OPTION_ACCOUNT_XPATH = "//span[text()='%s']";
     private static final String SELECT_OPTION_CONTACT_XPATH = "//*[@data-value='%s']";
+    private WebDriver driver;
+    private String label;
 
     public void selectOptionAccount(String option) {
         new WebDriverWait(driver, 15).until(ExpectedConditions
