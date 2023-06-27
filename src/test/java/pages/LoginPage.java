@@ -22,11 +22,13 @@ public class LoginPage extends BasePage{
     }
 
     public LoginPage inputPassword(String password) {
+        log.info("Enter password");
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         return this;
     }
 
     public LoginPage clickLoginButton() {
+        log.info("Click on the login button");
         driver.findElement(LOGIN_BUTTON).click();
         return this;
     }
