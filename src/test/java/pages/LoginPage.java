@@ -1,8 +1,9 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import utilities.PageUrls;
-
+@Log4j2
 public class LoginPage extends BasePage{
 
     private static final By USERNAME_INPUT = By.xpath("//input[@id='username']");
@@ -15,11 +16,13 @@ public class LoginPage extends BasePage{
     }
 
     public LoginPage inputUsername(String username) {
+//        log.info("Enter login");
         driver.findElement(USERNAME_INPUT).sendKeys(username);
         return this;
     }
 
     public LoginPage inputPassword(String password) {
+
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         return this;
     }
