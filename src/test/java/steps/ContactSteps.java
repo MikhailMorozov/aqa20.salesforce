@@ -7,7 +7,7 @@ import pages.NewContactPage;
 public class ContactSteps {
     NewContactPage newContactPage = new NewContactPage();
 
-    @Step("create new contact")
+    @Step("Create new contact")
     public ContactSteps createNewContact(Contact contact) {
         newContactPage.openPageNewContact()
                 .create(contact)

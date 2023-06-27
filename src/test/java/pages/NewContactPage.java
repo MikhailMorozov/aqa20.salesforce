@@ -10,7 +10,7 @@ import static utilities.StringConstant.*;
 
 public class NewContactPage extends BasePage{
 
-    public static final String SAVE_BUTTON_XPATH = "//button[@name = 'SaveEdit']";
+    public static final String SAVE_BUTTON_XPATH = "//button[@name='SaveEdit']";
 
     public final static String FULL_NAME_CONTACT = "//span[contains(text(),'%s')]";
 

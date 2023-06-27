@@ -2,7 +2,6 @@ package tests;
 
 
 import model.Contact;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import steps.ContactSteps;
