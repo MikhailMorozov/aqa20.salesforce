@@ -1,13 +1,17 @@
 package tests;
 
-import model.User;
+import model.Account;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import steps.AccountSteps;
 
-public class AccountTest {
 
+public class AccountTest extends BaseTest{
+    Account account = new Account("AQA Account 1", "www.onliner.by", "Apparel");
     @Test
-    public void createAccountTest(){
-        User user = new User("ckotd-9hz7@force.com", "TMSAQA20onl", "https://eu44.lightning.force.com");
-
+    public void createAccountTest() {
+        AccountSteps accountSteps = new AccountSteps();
+        accountSteps.createNewAccount(account);
+        Assert.assertTrue(accountSteps.accountNameIsDisplayed(account), "New account don't create");
     }
 }
