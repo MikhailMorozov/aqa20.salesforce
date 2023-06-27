@@ -16,13 +16,12 @@ public class LoginPage extends BasePage{
     }
 
     public LoginPage inputUsername(String username) {
-//        log.info("Enter login");
+        log.info("Enter login");
         driver.findElement(USERNAME_INPUT).sendKeys(username);
         return this;
     }
 
     public LoginPage inputPassword(String password) {
-
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         return this;
     }
